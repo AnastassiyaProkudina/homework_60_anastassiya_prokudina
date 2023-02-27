@@ -1,0 +1,164 @@
+[
+{
+  "model": "online_store.product",
+  "pk": 1,
+  "fields": {
+    "title": "Meat",
+    "description": "Fresh Meat in Store",
+    "image": "https://vgmeats.ca/content/uploads/vgs-big-beef-sale-is-back.jpg",
+    "category": "food",
+    "balance": 2,
+    "price": "15.00",
+    "created_at": "2023-02-24T03:58:45.012Z",
+    "updated_at": "2023-02-27T09:56:40.554Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.554Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 2,
+  "fields": {
+    "title": "Lexus",
+    "description": "No Description for Lexus",
+    "image": "https://l1-cms-2.images.lexus-europe.com/lexusone/lexruruv11/Lexus-RX_tcm-3173-1803901.png",
+    "category": "car",
+    "balance": 2,
+    "price": "35000.00",
+    "created_at": "2023-02-24T04:35:37.095Z",
+    "updated_at": "2023-02-27T09:56:40.643Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.643Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 3,
+  "fields": {
+    "title": "Corn",
+    "description": "No Description",
+    "image": "https://s.aolcdn.com/commerce/autodata/images/20MBGEA1.jpg",
+    "category": "food",
+    "balance": 6,
+    "price": "2.02",
+    "created_at": "2023-02-24T04:44:47.209Z",
+    "updated_at": "2023-02-27T06:46:08.247Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T06:46:08.247Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 4,
+  "fields": {
+    "title": "Audi",
+    "description": "No Description",
+    "image": "https://s.aolcdn.com/commerce/autodata/images/20MBGEA1.jpg",
+    "category": "car",
+    "balance": 1,
+    "price": "5000.00",
+    "created_at": "2023-02-24T05:01:17.870Z",
+    "updated_at": "2023-02-27T09:56:40.928Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.928Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 5,
+  "fields": {
+    "title": "Patch",
+    "description": "No Description",
+    "image": "https://admin.dr-house.kz/files/cache/front/400x400/d2/77/41/pal-1.png",
+    "category": "pharmacy",
+    "balance": 16,
+    "price": "2.00",
+    "created_at": "2023-02-24T05:12:39.462Z",
+    "updated_at": "2023-02-27T09:56:40.908Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.907Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 6,
+  "fields": {
+    "title": "Apple Watch",
+    "description": "Смарт-часы Apple Watch SE, 40mm, Gold-Starlight",
+    "image": "https://static.shop.kz/upload/resize_cache/iblock/de0/c0g5m1jmyfw3i894dm9pd8ijfcic5mp8/450_450_1/164097o2.jpg",
+    "category": "device",
+    "balance": 4,
+    "price": "200.00",
+    "created_at": "2023-02-24T05:15:02.313Z",
+    "updated_at": "2023-02-27T09:56:40.852Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.851Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 7,
+  "fields": {
+    "title": "Xiaomi Mi Band 3",
+    "description": "Смело бросайте вызов самому себе. Продолжительность тренировки, пройденный путь, пульс и другие данные можно отследить в реальном времени.",
+    "image": "https://shop.kz/upload/iblock/9c5/130902_01.jpg",
+    "category": "device",
+    "balance": 5,
+    "price": "14.00",
+    "created_at": "2023-02-25T00:50:28.059Z",
+    "updated_at": "2023-02-27T09:56:40.941Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.941Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 8,
+  "fields": {
+    "title": "Dops",
+    "description": "Ear drops for pain",
+    "image": "https://d11qgm9a5k858y.cloudfront.net/hiktgrnae1ac9oc86ruc5nmttdai",
+    "category": "pharmacy",
+    "balance": 1,
+    "price": "3.98",
+    "created_at": "2023-02-27T09:22:26.534Z",
+    "updated_at": "2023-02-27T09:56:40.617Z",
+    "is_deleted": false,
+    "deleted_at": "2023-02-27T09:56:40.616Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 9,
+  "fields": {
+    "title": "zb",
+    "description": "No Description",
+    "image": "https://s.aolcdn.com/commerce/autodata/images/20MBGEA1.jpg",
+    "category": "other",
+    "balance": -1,
+    "price": "2.02",
+    "created_at": "2023-02-27T10:31:11.510Z",
+    "updated_at": "2023-02-27T10:31:30.529Z",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$F493MEsU30izNvJOOnaCAb$pfUn5KNkutKrwv9zYNFuuu1tAWbPNj2CcjvSjMbX1NA=",
+    "last_login": "2023-02-27T06:50:36.076Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-02-27T06:50:03.197Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
