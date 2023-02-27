@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 from django.db.models import TextChoices
 from django.utils import timezone
@@ -22,16 +23,22 @@ class Product(models.Model):
         verbose_name="Description",
         default="No Description",
     )
-    image = models.CharField(
+    image = models.TextField(
         max_length=2000, null=False, blank=False, verbose_name="Image"
     )
-    category = models.CharField(
+    category = models.TextField(
         max_length=40,
         choices=CategoryChoice.choices,
         verbose_name="Category",
         default=CategoryChoice.OTHER,
     )
-    balance = models.IntegerField(null=False, blank=False, verbose_name="Balance")
+    balance = models.IntegerField(
+        null=False,
+        blank=False,
+        verbose_name="Balance",
+        validators=[MinValueValidator(0)],
+        default=None,
+    )
     price = models.DecimalField(max_digits=7, decimal_places=2, verbose_name="Price")
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name="Date and time created"
