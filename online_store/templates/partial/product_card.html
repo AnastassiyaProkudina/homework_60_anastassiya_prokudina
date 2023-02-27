@@ -1,0 +1,29 @@
+<div class="card-size card m-4">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <img src="{{ product.image }}" class="picture" alt="Product Photo">
+        </div>
+        <div class="col-md-6">
+            {% include 'partial/product_category.html' with style='card-header' %}
+            <div class="card-body">
+                <p class="card-text">{{ product.title }}</p>
+                <h5 class="card-title">{{ product.price }}$</h5>
+                {% if footer == 'products' %}
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-light">See more>>></a>
+                {% elif footer == 'product' %}
+                    <div class="card-description">{{ product.description }}</div>
+                    <a class="btn btn-light" href="{% url 'product_update' product.id %}" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{% url 'product_delete' product.id %}" role="button">Delete</a>
+                    </div>
+                {% elif footer == 'delete' %}
+                    <form action="{% url 'product_confirm_delete' product.pk %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-dark" value="Delete">
+                        <a href="{% url 'index' %}" class="btn btn-light">Cancel</a>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+

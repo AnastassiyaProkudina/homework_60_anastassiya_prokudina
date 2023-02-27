@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block menu %}
+    <li class="menu">
+        <div class="search-form">
+            <form action="{% url 'index' %}">
+                {% include 'partial/product_form.html' with button_text='Find' button_class="btn-search my-sm-0" %}
+            </form>
+        </div>
+    </li>
+{% endblock %}
+{% block content %}
+    <div class="message-box">
+        <p>{{ message }}</p>
+    </div>
+    <div class="content">
+        <div class="card-group">
+            {% for product in products %}
+                {% include 'partial/product_card.html' with footer='products' %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
