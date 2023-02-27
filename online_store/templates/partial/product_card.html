@@ -11,10 +11,11 @@
                 {% if footer == 'products' %}
                     <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-light">See more>>></a>
                 {% elif footer == 'product' %}
-                    <div class="card-description">{{ product.description }}</div>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">Qty: {{ product.balance }}</p>
+                    <p class="card-small-text">Added at: {{ product.created_at }}</p>
                     <a class="btn btn-light" href="{% url 'product_update' product.id %}" role="button">Edit</a>
                     <a class="btn btn-dark" href="{% url 'product_delete' product.id %}" role="button">Delete</a>
-                    </div>
                 {% elif footer == 'delete' %}
                     <form action="{% url 'product_confirm_delete' product.pk %}" method="post">
                         {% csrf_token %}

@@ -96,12 +96,15 @@ body {
 .card {
     border-radius: 10% !important;
     background-color: #d5a493 !important;
+    padding: 10px;
 }
 
 .card-header {
-    border-radius: 0 40% 0 0 !important;
+    border-radius: 0 10% 0 0 !important;
 }
-
+.card-body{
+    border-radius: 0 0 10% 0 !important;
+}
 .card-header-a {
     color: rgba(105, 95, 95, 0.75) !important;
     font-style: italic;
@@ -113,7 +116,9 @@ body {
     min-width: 33rem !important;
     max-width: 33rem;
 }
-
+.card-small-text{
+    font-size: 12px;
+}
 .picture {
     position: relative;
     display: block;
