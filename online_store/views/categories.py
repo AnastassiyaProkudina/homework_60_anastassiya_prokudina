@@ -12,7 +12,7 @@ def categories_list(request: WSGIRequest):
         products = (
             Product.objects.all()
             .filter(is_deleted=False, balance__gte=0, title=title)
-            .order_by("title")
+            .order_by("category", "title")
         )
         context = {"products": products, "choices": CategoryChoice.choices, "form": form}
         return render(request, "products/index.html", context=context)
@@ -24,7 +24,7 @@ def categories_list(request: WSGIRequest):
 def category(request, pk):
     form = SearchForm()
     products = Product.objects.filter(is_deleted=False, category=pk)
-    products.order_by("title").values()
+    products.order_by("category", "title").values()
     if not products:
         message = f"You have no products in category {pk}"
         context = {"message": message, "form": form}

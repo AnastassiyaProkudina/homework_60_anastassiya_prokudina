@@ -15,12 +15,6 @@ class ProductForm(forms.ModelForm):
             raise ValidationError("Title must be longer than two characters!")
         return title
 
-    def clean_balance(self):
-        balance = self.cleaned_data.get("balance")
-        if balance <= 0:
-            raise ValidationError("Min quantity 1 pc.")
-        return balance
-
 
 class SearchForm(forms.ModelForm):
     class Meta:

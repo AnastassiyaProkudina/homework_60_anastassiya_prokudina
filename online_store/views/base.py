@@ -13,7 +13,7 @@ def products_list(request: WSGIRequest):
         products = (
             Product.objects.all()
             .filter(is_deleted=False, balance__gte=0, title=title)
-            .order_by("title")
+            .order_by("category", "title")
         )
         if len(products) == 0:
             message = 'Sorry, nothing at here! Try again!'
@@ -21,7 +21,7 @@ def products_list(request: WSGIRequest):
         products = (
             Product.objects.all()
             .filter(is_deleted=False, balance__gte=0)
-            .order_by("title")
+            .order_by("category", "title")
         )
     context = {"products": products, "choices": CategoryChoice.choices, "form": form, "message": message}
     return render(request, "products/index.html", context=context)

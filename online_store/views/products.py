@@ -64,7 +64,6 @@ def products_delete(request):
     if request.method == "POST":
         for product in products:
             x = request.POST.get(str(product.pk))
-            print(x)
             if str(x) == "on":
                 b = Product.objects.get(pk=product.pk)
                 b.delete()
@@ -72,13 +71,3 @@ def products_delete(request):
 
     context = {"products": products, "choices": CategoryChoice.choices}
     return render(request, "products/products_delete.html", context=context)
-
-#
-# def product_search(request):
-#     if request.method == "":
-#         form = SearchForm(request.GET.)
-#         if form.is_valid():
-#             title = form.cleaned_data.get("title")
-#             products = Product.objects.all().filter(is_deleted=False, balance__gte=0, title=title).order_by('title')
-#             context = {"form": form, "products": products}
-#             return render(request, "products/index.html", context=context)
