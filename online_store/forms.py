@@ -12,13 +12,13 @@ class ProductForm(forms.ModelForm):
     def clean_title(self):
         title = self.cleaned_data.get("title")
         if len(title) < 2:
-            raise ValidationError("Заголовок должен быть длиннее двух символов")
+            raise ValidationError("Title must be longer than two characters!")
         return title
 
     def clean_balance(self):
         balance = self.cleaned_data.get("balance")
-        if balance < 0:
-            raise ValidationError("Остаток должен быть больше одного")
+        if balance <= 0:
+            raise ValidationError("Min quantity 1 pc.")
         return balance
 
 

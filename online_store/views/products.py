@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from online_store.forms import ProductForm, SearchForm
+from online_store.forms import ProductForm
 from online_store.models import Product, CategoryChoice
 
 
@@ -72,7 +72,6 @@ def products_delete(request):
 
     context = {"products": products, "choices": CategoryChoice.choices}
     return render(request, "products/products_delete.html", context=context)
-
 
 #
 # def product_search(request):
