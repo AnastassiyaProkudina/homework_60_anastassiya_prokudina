@@ -11,6 +11,8 @@ class IndexView(ListView):
     model = Product
     context_object_name = 'products'
     ordering = ('created_at',)
+    paginate_by = 6
+    paginate_orphans = 1
 
     def get(self, request, *args, **kwargs):
         self.form = self.get_search_form()
@@ -26,7 +28,7 @@ class IndexView(ListView):
         return None
 
     def get_queryset(self):
-        queryset = super().get_queryset().filter(is_deleted=False, balance__gte=0)
+        queryset = super().get_queryset().filter(is_deleted=False, balance__gt=0)
         if self.search_value:
             query = Q(title__icontains=self.search_value) | Q(description__icontains=self.search_value)
             queryset = queryset.filter(query)

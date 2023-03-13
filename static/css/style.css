@@ -217,3 +217,32 @@ td, .td-style {
     margin-top: -34px;
 }
 
+.pagination a {
+    display: inline-block;
+    border: solid 1px #F64C72;
+    border-radius: 3px;
+    color: #F64C72;
+    padding: 5px;
+    margin: 10px;
+}
+
+.paginator-text {
+    display: inline-block;
+    color: #F64C72;
+    padding: 5px;
+    margin: 10px;
+}
+.search-box{
+    position: absolute;
+    margin-top: 20rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 1170px;
+}
+.paginator-box{
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 1170px;
+}

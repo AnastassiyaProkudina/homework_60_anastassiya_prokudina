@@ -22,7 +22,7 @@ def categories_list(request: WSGIRequest):
 
 
 def category(request, pk):
-    form = SearchForm()
+    form = SimpleSearchForm()
     products = Product.objects.filter(is_deleted=False, category=pk)
     products.order_by("category", "title").values()
     if not products:
