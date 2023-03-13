@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+    <div class="table-box form-box card-shadow">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col" class="th-style">#</th>
+                <th scope="col" class="th-style">Product</th>
+                <th scope="col" class="th-style">Quantity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in cart %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.product }}</td>
+                    <td>{{ product.qty }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+

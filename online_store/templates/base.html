@@ -29,6 +29,11 @@
                 <li class="menu">
                     <a href="{% url 'categories_list' %}" class="nav-link">Categories</a>
                 </li>
+                <li class="menu">
+                    <a href="{% url 'cart_list' %}">
+                        <iconify-icon icon="ph:shopping-cart-simple-bold" style="color: #da7b93; position: absolute; margin-top: -18px" width="23" height="23"></iconify-icon>
+                    </a>
+                </li>
                 {% block menu %}{% endblock %}
             </ul>
         </div>

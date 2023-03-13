@@ -215,6 +215,7 @@ td, .td-style {
 .search-form {
     position: absolute;
     margin-top: -34px;
+    margin-left: 7rem;
 }
 
 .pagination a {
