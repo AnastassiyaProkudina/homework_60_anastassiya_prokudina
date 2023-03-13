@@ -1,27 +1,44 @@
-from django.core.handlers.wsgi import WSGIRequest
-from django.shortcuts import render
+from django.db.models import Q
+from django.utils.http import urlencode
+from django.views.generic import RedirectView, ListView
 
-from online_store.forms import SearchForm
-from online_store.models import Product, CategoryChoice
+from online_store.forms import SimpleSearchForm
+from online_store.models import Product
 
 
-def products_list(request: WSGIRequest):
-    form = SearchForm
-    title = request.GET.get("title")
-    message = ""
-    if title:
-        products = (
-            Product.objects.all()
-            .filter(is_deleted=False, balance__gte=0, title=title)
-            .order_by("category", "title")
-        )
-        if len(products) == 0:
-            message = 'Sorry, nothing at here! Try again!'
-    else:
-        products = (
-            Product.objects.all()
-            .filter(is_deleted=False, balance__gte=0)
-            .order_by("category", "title")
-        )
-    context = {"products": products, "choices": CategoryChoice.choices, "form": form, "message": message}
-    return render(request, "products/index.html", context=context)
+class IndexView(ListView):
+    template_name = 'products/index.html'
+    model = Product
+    context_object_name = 'products'
+    ordering = ('created_at',)
+
+    def get(self, request, *args, **kwargs):
+        self.form = self.get_search_form()
+        self.search_value = self.get_search_value()
+        return super().get(request, *args, **kwargs)
+
+    def get_search_form(self):
+        return SimpleSearchForm(self.request.GET)
+
+    def get_search_value(self):
+        if self.form.is_valid():
+            return self.form.cleaned_data['search']
+        return None
+
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(is_deleted=False, balance__gte=0)
+        if self.search_value:
+            query = Q(title__icontains=self.search_value) | Q(description__icontains=self.search_value)
+            queryset = queryset.filter(query)
+        return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        context['form'] = self.form
+        if self.search_value:
+            context['query'] = urlencode({'search': self.search_value})
+        return context
+
+
+class IndexRedirectView(RedirectView):
+    pattern_name = 'index'

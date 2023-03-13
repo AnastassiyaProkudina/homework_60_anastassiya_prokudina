@@ -46,9 +46,9 @@ class Product(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True, verbose_name="Date and time updated"
     )
-    is_deleted = models.BooleanField(verbose_name="Удалено", null=False, default=False)
+    is_deleted = models.BooleanField(verbose_name="Deleted", null=False, default=False)
     deleted_at = models.DateTimeField(
-        verbose_name="Дата и время удаления", null=True, default=None
+        verbose_name="Date and time deleted at", null=True, default=None
     )
 
     def __str__(self):

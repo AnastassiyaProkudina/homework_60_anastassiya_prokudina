@@ -16,16 +16,14 @@ class ProductForm(forms.ModelForm):
         return title
 
 
-class SearchForm(forms.ModelForm):
-    class Meta:
-        model = Product
-        fields = ["title"]
-        widgets = {
-            "title": forms.TextInput(
-                attrs={
-                    "placeholder": "Search Product...",
-                    "style": "border-color: #da7b93; font-size: 16px; position: absolute;",
-                }
-            )
-        }
-        labels = {"title": ""}
+class SimpleSearchForm(forms.Form):
+    search = forms.CharField(
+        max_length=30,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Search Product...',
+                'style': 'border: solid #da7b93 2px; font-size: 16px; position: absolute;'
+            })
+    )

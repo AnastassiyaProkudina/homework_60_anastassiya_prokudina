@@ -1,12 +1,12 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render
 
-from online_store.forms import SearchForm
+from online_store.forms import SimpleSearchForm
 from online_store.models import CategoryChoice, Product
 
 
 def categories_list(request: WSGIRequest):
-    form = SearchForm()
+    form = SimpleSearchForm()
     title = request.GET.get("title")
     if title:
         products = (
