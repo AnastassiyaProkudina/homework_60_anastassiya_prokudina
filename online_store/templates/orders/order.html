@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Product Create{% endblock %}
+{% block content %}
+    <div class="form-box">
+        <h1>Order</h1>
+        <div class="form">
+            <p class="card-text">Name: {{ order.name }}</p>
+            <p class="card-text">Address: {{ order.address }}</p>
+            <p class="card-small-text">Phone: {{ order.phone }}</p>
+        </div>
+    </div>
+{% endblock %}

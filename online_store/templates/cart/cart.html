@@ -38,7 +38,9 @@
             <h5 class="justify-content-md-end">Total in cart: {{ result }}</h5>
         </form>
         <br>
-        {% include 'partial/form.html' with action_url="order_detail" form_method='post'%}
+        <form action="{% url 'order_create' %}" method="post">
+                {% include 'partial/product_form.html' with button_text='Add Order' button_class='btn btn-outline-dark btn-lg' %}
+        </form>
     </div>
 {% endblock %}
 
