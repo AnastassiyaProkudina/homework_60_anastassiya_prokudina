@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import (
+    TemplateView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
 
 from online_store.forms import ProductForm
 from online_store.models import Product, CategoryChoice
@@ -13,7 +19,7 @@ class ProductDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         products = Product.objects.filter(id=self.object.pk)
-        context['products'] = products
+        context["products"] = products
         context["choices"] = CategoryChoice.choices
         return context
 
@@ -24,7 +30,7 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
 
     def get_success_url(self):
-        return reverse('product_detail', kwargs={'pk': self.object.pk})
+        return reverse("product_detail", kwargs={"pk": self.object.pk})
 
 
 class ProductUpdateView(UpdateView):
@@ -33,16 +39,13 @@ class ProductUpdateView(UpdateView):
     form_class = ProductForm
 
     def get_success_url(self):
-        return reverse('product_detail', kwargs={'pk': self.object.pk})
+        return reverse("product_detail", kwargs={"pk": self.object.pk})
 
 
 class ProductDeleteView(DeleteView):
     template_name = "products/product_confirm_delete.html"
     model = Product
-    success_url = reverse_lazy('index')
-
-
-
+    success_url = reverse_lazy("index")
 
 
 class ProductConfirmDeleteView(TemplateView):

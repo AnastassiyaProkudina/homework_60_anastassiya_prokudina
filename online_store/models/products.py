@@ -3,6 +3,8 @@ from django.db import models
 from django.db.models import TextChoices
 from django.utils import timezone
 
+from online_store.manager import ProductManager
+
 
 class CategoryChoice(TextChoices):
     OTHER = "other", "Other"
@@ -53,6 +55,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    objects = ProductManager()
 
     def delete(self, using=None, keep_parents=False):
         self.is_deleted = True
