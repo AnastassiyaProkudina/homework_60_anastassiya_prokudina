@@ -35,9 +35,11 @@ class ProductCartCreateView(TemplateView):
         if product_in_cart:
             balance = Product.objects.get_balance(pk=kwargs["pk"])
             qty = Cart.objects.get_qty(product_id=kwargs["pk"])
-            if balance >= qty:
+            if balance > qty:
+                qty += 1
                 product_in_cart.update(qty=qty)
             else:
+                product_in_cart.update(qty=qty)
                 message = f"Unable to add to cart. Only {balance}pcs in stock."
         else:
             Cart.objects.create(product_id=kwargs["pk"], qty=1)
@@ -52,10 +54,9 @@ class ProductDeleteFromCartView(TemplateView):
         products_in_cart = Cart.objects.filter(qty__gt=0)
         for product in products_in_cart:
             x = request.POST.get(str(product.pk))
-            print(x)
             if str(x) == "on":
-                obj = Cart.objects.get(product_id=product.pk)
-                obj.delete()
+                obj = Cart.objects.get(pk=product.pk)
+                obj.update_qty()
         return redirect("cart_list")
 
 

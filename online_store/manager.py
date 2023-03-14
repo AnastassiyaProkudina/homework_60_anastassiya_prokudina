@@ -1,4 +1,4 @@
-from django.db.models import Manager, Sum, Q, F
+from django.db.models import Manager, Sum, F
 
 
 class ProductManager(Manager):

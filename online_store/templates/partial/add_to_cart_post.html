@@ -1,0 +1,4 @@
+<form action="{% url 'product_cart_add' product.pk %}" method="post">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-outline-light m-1" value="Add to cart">
+</form>
