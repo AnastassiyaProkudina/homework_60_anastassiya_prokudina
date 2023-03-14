@@ -24,3 +24,10 @@ class Cart(models.Model):
         return f"{self.product} - {self.qty}"
 
     objects = CartManager()
+
+    def update_qty(self):
+        if self.qty > 1:
+            self.qty -= 1
+        elif self.qty == 1:
+            self.qty = 0
+        self.save()
