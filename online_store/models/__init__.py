@@ -1,2 +1,2 @@
 from .products import Product, CategoryChoice
-from .cart import ProductInCart
+from .cart import Cart

@@ -233,7 +233,8 @@ td, .td-style {
     padding: 5px;
     margin: 10px;
 }
-.search-box{
+
+.search-box {
     position: absolute;
     margin-top: 20rem;
     display: flex;
@@ -241,7 +242,8 @@ td, .td-style {
     justify-content: center;
     width: 1170px;
 }
-.paginator-box{
+
+.paginator-box {
     justify-content: center;
     flex-wrap: nowrap;
     align-items: center;

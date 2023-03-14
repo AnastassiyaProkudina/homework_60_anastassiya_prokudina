@@ -9,19 +9,27 @@
                 <p class="card-text">{{ product.title }}</p>
                 <h5 class="card-title">{{ product.price }}$</h5>
                 {% if footer == 'products' %}
-                    <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-light">See more>>></a>
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-light m-1">See more>>></a>
+                    <form action="{% url 'product_cart_add' product.pk %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-outline-light m-1" value="Add to cart">
+                    </form>
+{#                    <a href="{% url 'product_cart_add' product.pk %}" class="btn btn-outline-light m-1">Add to cart</a>#}
                 {% elif footer == 'product' %}
                     <p class="card-text">{{ product.description }}</p>
-                    <p class="card-text">Qty: {{ product.balance }}</p>
+                    <p class="card-text">In Stock: {{ product.balance }}</p>
                     <p class="card-small-text">Added at: {{ product.created_at }}</p>
-                    <a class="btn btn-light" href="{% url 'product_update' product.id %}" role="button">Edit</a>
-                    <a class="btn btn-dark" href="{% url 'product_delete' product.id %}" role="button">Delete</a>
+                    <a class="btn btn-light m-1" href="{% url 'product_update' product.id %}" role="button">Edit</a>
+                    <a class="btn btn-dark m-1" href="{% url 'product_delete' product.id %}" role="button">Delete</a>
                 {% elif footer == 'delete' %}
                     <form action="{% url 'product_confirm_delete' product.pk %}" method="post">
                         {% csrf_token %}
                         <input type="submit" class="btn btn-dark" value="Delete">
                         <a href="{% url 'index' %}" class="btn btn-light">Cancel</a>
                     </form>
+{#                {% elif footer == 'product_to_cart' %}#}
+{#                    <p class="card-text">In Stock: {{ product.balance }}</p>#}
+
                 {% endif %}
             </div>
         </div>
