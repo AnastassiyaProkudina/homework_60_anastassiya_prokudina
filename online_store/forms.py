@@ -1,7 +1,7 @@
 from django import forms
 from django.core.exceptions import ValidationError
 
-from online_store.models import Product
+from online_store.models import Product, Cart, Order
 
 
 class ProductForm(forms.ModelForm):
@@ -23,7 +23,33 @@ class SimpleSearchForm(forms.Form):
         label="",
         widget=forms.TextInput(
             attrs={
-                'placeholder': 'Search Product...',
-                'style': 'border: solid #da7b93 2px; font-size: 16px; position: absolute;'
-            })
+                "placeholder": "Search Product...",
+                "style": "border: solid #da7b93 2px; font-size: 16px; position: absolute;",
+            }
+        ),
     )
+
+
+class ProductCartForm(forms.ModelForm):
+    class Meta:
+        model = Cart
+        fields = [
+            "qty",
+        ]
+
+    def clean_qty(self, pk):
+        qty = self.cleaned_data.get("qty")
+        balance = Product.objects.get_balance(pk=pk)
+        if qty > balance:
+            raise ValidationError(f"Max quantity is : {balance}!")
+        return qty
+
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = [
+            "name",
+            "address",
+            "phone",
+        ]

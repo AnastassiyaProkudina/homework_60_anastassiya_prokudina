@@ -2,6 +2,7 @@ from django.db.models import Q, F
 from django.shortcuts import redirect
 from django.views.generic import ListView, TemplateView
 
+from online_store.forms import OrderForm
 from online_store.models import Cart, Product
 
 
@@ -23,6 +24,7 @@ class CartView(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context["result"] = Product.objects.get_total_result()
+        context["form"] = OrderForm()
         return context
 
 

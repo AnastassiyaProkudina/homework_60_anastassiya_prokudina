@@ -2,6 +2,7 @@
 {% block title %}Cart{% endblock %}
 {% block content %}
     <div class="table-box form-box card-shadow">
+        <h1>Order</h1>
         <form action="{% url 'products_delete_from_cart' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <table class="table">
@@ -33,9 +34,11 @@
                 {% endfor %}
                 </tbody>
             </table>
-            <h5>Total in cart: {{ result }}</h5>
             <input type="submit" class="btn btn-outline-dark" value="Delete">
+            <h5 class="justify-content-md-end">Total in cart: {{ result }}</h5>
         </form>
+        <br>
+        {% include 'partial/form.html' with action_url="order_detail" form_method='post'%}
     </div>
 {% endblock %}
 
