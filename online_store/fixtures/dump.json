@@ -7,12 +7,12 @@
     "description": "Fresh Meat in Store",
     "image": "https://vgmeats.ca/content/uploads/vgs-big-beef-sale-is-back.jpg",
     "category": "food",
-    "balance": 2,
+    "balance": 4,
     "price": "15.00",
     "created_at": "2023-02-24T03:58:45.012Z",
-    "updated_at": "2023-02-27T09:56:40.554Z",
+    "updated_at": "2023-03-14T07:02:27.161Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.554Z"
+    "deleted_at": null
   }
 },
 {
@@ -26,9 +26,9 @@
     "balance": 2,
     "price": "35000.00",
     "created_at": "2023-02-24T04:35:37.095Z",
-    "updated_at": "2023-02-27T09:56:40.643Z",
+    "updated_at": "2023-03-14T06:56:07.663Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.643Z"
+    "deleted_at": null
   }
 },
 {
@@ -36,15 +36,15 @@
   "pk": 3,
   "fields": {
     "title": "Corn",
-    "description": "No Description",
-    "image": "https://s.aolcdn.com/commerce/autodata/images/20MBGEA1.jpg",
+    "description": "Калорийность кукурузы Бондюэль сладкой в зёрнах\r\nКалорийность сладкой кукурузы Бондюэль в зёрнах составляет 93 ккал на 100 граммов продукта.",
+    "image": "https://calorizator.ru/sites/default/files/imagecache/product_512/product/corn-4.jpg",
     "category": "food",
     "balance": 6,
     "price": "2.02",
     "created_at": "2023-02-24T04:44:47.209Z",
-    "updated_at": "2023-02-27T06:46:08.247Z",
+    "updated_at": "2023-03-13T01:20:14.695Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T06:46:08.247Z"
+    "deleted_at": null
   }
 },
 {
@@ -60,7 +60,7 @@
     "created_at": "2023-02-24T05:01:17.870Z",
     "updated_at": "2023-02-27T09:56:40.928Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.928Z"
+    "deleted_at": null
   }
 },
 {
@@ -76,7 +76,7 @@
     "created_at": "2023-02-24T05:12:39.462Z",
     "updated_at": "2023-02-27T09:56:40.908Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.907Z"
+    "deleted_at": null
   }
 },
 {
@@ -90,9 +90,9 @@
     "balance": 4,
     "price": "200.00",
     "created_at": "2023-02-24T05:15:02.313Z",
-    "updated_at": "2023-02-27T09:56:40.852Z",
-    "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.851Z"
+    "updated_at": "2023-03-14T06:01:20.335Z",
+    "is_deleted": true,
+    "deleted_at": "2023-03-14T06:01:20.335Z"
   }
 },
 {
@@ -108,23 +108,23 @@
     "created_at": "2023-02-25T00:50:28.059Z",
     "updated_at": "2023-02-27T09:56:40.941Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.941Z"
+    "deleted_at": null
   }
 },
 {
   "model": "online_store.product",
   "pk": 8,
   "fields": {
-    "title": "Dops",
+    "title": "Drops",
     "description": "Ear drops for pain",
     "image": "https://d11qgm9a5k858y.cloudfront.net/hiktgrnae1ac9oc86ruc5nmttdai",
     "category": "pharmacy",
     "balance": 1,
     "price": "3.98",
     "created_at": "2023-02-27T09:22:26.534Z",
-    "updated_at": "2023-02-27T09:56:40.617Z",
+    "updated_at": "2023-03-13T03:52:32.795Z",
     "is_deleted": false,
-    "deleted_at": "2023-02-27T09:56:40.616Z"
+    "deleted_at": null
   }
 },
 {
@@ -134,13 +134,145 @@
     "title": "zb",
     "description": "No Description",
     "image": "https://s.aolcdn.com/commerce/autodata/images/20MBGEA1.jpg",
-    "category": "other",
-    "balance": -1,
+    "category": "car",
+    "balance": 0,
     "price": "2.02",
     "created_at": "2023-02-27T10:31:11.510Z",
-    "updated_at": "2023-02-27T10:31:30.529Z",
+    "updated_at": "2023-03-13T22:19:27.261Z",
     "is_deleted": false,
     "deleted_at": null
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 10,
+  "fields": {
+    "title": "Watch E",
+    "description": "No Description",
+    "image": "https://xiaomi.kz/upload/resize_cache/webp/iblock/e66/325_325_1/il1ysddru0qqxaz3mbzn09f44df4unyx.webp",
+    "category": "device",
+    "balance": 7,
+    "price": "65.00",
+    "created_at": "2023-03-12T22:07:33.856Z",
+    "updated_at": "2023-03-13T01:21:42.262Z",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 11,
+  "fields": {
+    "title": "hsrh",
+    "description": "No Description",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQipjRoAX0QiWWFHLI-swPDZc-UP3iqx1zHTo5Jy4rOYg&s",
+    "category": "other",
+    "balance": 2,
+    "price": "84.00",
+    "created_at": "2023-03-12T23:56:57.388Z",
+    "updated_at": "2023-03-13T00:04:35.841Z",
+    "is_deleted": true,
+    "deleted_at": "2023-03-13T00:04:35.841Z"
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 12,
+  "fields": {
+    "title": "Citramon P",
+    "description": "Цитрамон П Реневал, таблетки 10 шт\r\nПроизводитель: Обновление ПФК АО, Россия",
+    "image": "https://cdn.eapteka.ru/upload/offer_photo/235/755/resized/230_230_1_d1fa94d3f0576a4bd19818c4060d2ade.png?t=1671141394&_cvc=1678519280",
+    "category": "pharmacy",
+    "balance": 30,
+    "price": "1.02",
+    "created_at": "2023-03-13T01:25:17.925Z",
+    "updated_at": "2023-03-13T01:25:17.925Z",
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "online_store.product",
+  "pk": 13,
+  "fields": {
+    "title": "dbzdgv",
+    "description": "No Description",
+    "image": "https://www.eapteka.ru/upload/offer_photo/235/755/1_d1fa94d3f0576a4bd19818c4060d2ade.png?t=1671141394",
+    "category": "other",
+    "balance": 0,
+    "price": "57.00",
+    "created_at": "2023-03-13T01:27:10.617Z",
+    "updated_at": "2023-03-13T01:27:18.029Z",
+    "is_deleted": true,
+    "deleted_at": "2023-03-13T01:27:18.029Z"
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "qty": 1
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 2,
+  "fields": {
+    "product": 2,
+    "qty": 0
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "qty": 1
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 7,
+  "fields": {
+    "product": 7,
+    "qty": 0
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 8,
+  "fields": {
+    "product": 8,
+    "qty": 0
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 31,
+  "fields": {
+    "product": 3,
+    "qty": 1
+  }
+},
+{
+  "model": "online_store.cart",
+  "pk": 32,
+  "fields": {
+    "product": 10,
+    "qty": 0
+  }
+},
+{
+  "model": "online_store.order",
+  "pk": 1,
+  "fields": {
+    "name": "Joe",
+    "phone": "76867",
+    "address": "jbjhm",
+    "created_at": "2023-03-14T12:56:34.765Z",
+    "updated_at": "2023-03-14T12:56:34.765Z",
+    "product": []
   }
 },
 {
