@@ -1,4 +1,4 @@
-from django.db.models import Q, F, Sum
+from django.db.models import Q, F
 from django.shortcuts import redirect
 from django.views.generic import ListView, TemplateView
 
@@ -42,3 +42,20 @@ class ProductCartCreateView(TemplateView):
         else:
             Cart.objects.create(product_id=kwargs["pk"], qty=1)
         return redirect("index")
+
+
+class ProductDeleteFromCartView(TemplateView):
+    model = Cart
+    template_name = "cart/cart.html"
+
+    def post(self, request, **kwargs):
+        products_in_cart = Cart.objects.filter(qty__gt=0)
+        for product in products_in_cart:
+            x = request.POST.get(str(product.pk))
+            print(x)
+            if str(x) == "on":
+                obj = Cart.objects.get(product_id=product.pk)
+                obj.delete()
+        return redirect("cart_list")
+
+

@@ -22,11 +22,3 @@ class CartManager(Manager):
             self.get_queryset().filter(product_id=product_id).aggregate(Sum("qty"))
         )
         return product_qty["qty__sum"]
-
-        # products_in_cart = Cart.objects.all()
-        # for product_in_cart in products_in_cart:
-        #     if product_in_cart.pk == pk:
-        #         product_in_cart.qty += 1
-        # if product_in_cart.qty > balance:
-        #     return None
-        # i.save()
